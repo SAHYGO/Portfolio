@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayoub Seghir — Data & Web Developer</title>
+  <meta name="description"
+    content="Portfolio d'Ayoub Seghir, étudiant en BUT Informatique spécialisé Data & Développement Web. Disponible pour stage à partir d'avril 2026." />
+  <link rel="icon" type="image/png" href="img/Logosahygo-removebg-preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAV — PILL BAR STICKY
+  ════════════════════════════════════════════ -->
+  <header id="navbar">
+    <nav class="nav-pill">
+      <!-- Gauche : avatar + nom + titre (style bayfield) -->
+      <a href="#hero" class="nav-logo">
+        <div class="nav-avatar">
+          <img src="img/photodeprofil.jpg" alt="Ayoub Seghir" />
+        </div>
+        <div class="nav-name-wrap">
+          <span class="nav-name">Ayoub Seghir</span>
+          <span class="nav-subtitle" data-fr="Étudiant BUT Info — Data &amp; Web"
+            data-en="BUT Computer Science Student — Data &amp; Web">Étudiant BUT Info — Data &amp; Web</span>
+        </div>
+      </a>
+
+      <!-- Centre : liens -->
+      <div class="nav-links">
+        <a href="#about" class="nav-link" data-fr="À propos" data-en="About">À propos</a>
+        <a href="#projects" class="nav-link" data-fr="Projets" data-en="Projects">Projets</a>
+        <a href="#parcours" class="nav-link" data-fr="Parcours" data-en="Journey">Parcours</a>
+        <a href="#contact" class="nav-link nav-cta" data-fr="Contact" data-en="Contact">Contact</a>
+      </div>
+
+      <!-- Droite : contrôles -->
+      <div class="nav-controls">
+        <!-- Toggle thème -->
+        <button id="themeToggle" class="nav-ctrl-btn" aria-label="Changer le thème" title="Thème sombre/clair">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+        </button>
+
+        <!-- Dropdown langue -->
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="nav-ctrl-btn lang-trigger" id="langTrigger" aria-label="Changer la langue"
+            aria-expanded="false">
+            <span id="flag-fr"><img src="https://flagcdn.com/20x15/fr.png" alt="FR"
+                style="vertical-align:middle;border-radius:2px"></span>
+            <span id="flag-en" style="display:none"><img src="https://flagcdn.com/20x15/gb.png" alt="EN"
+                style="vertical-align:middle;border-radius:2px"></span>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu">
+            <button class="lang-option lang-option-active" data-lang="fr" role="menuitem">
+              <img src="https://flagcdn.com/20x15/fr.png" alt="FR" style="vertical-align:middle;border-radius:2px">
+              Français
+            </button>
+            <button class="lang-option" data-lang="en" role="menuitem">
+              <img src="https://flagcdn.com/20x15/gb.png" alt="EN" style="vertical-align:middle;border-radius:2px">
+              English
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile burger -->
+        <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <a href="#about" class="nav-mobile-link" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#projects" class="nav-mobile-link" data-fr="Projets" data-en="Projects">Projets</a>
+      <a href="#parcours" class="nav-mobile-link" data-fr="Parcours" data-en="Timeline">Parcours</a>
+      <a href="#contact" class="nav-mobile-link" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+    ════════════════════════════════════════════ -->
+    <section id="hero">
+      <canvas id="particlesCanvas"></canvas>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-fr="Disponible pour stage · Avril 2026" data-en="Available for internship · April 2026">Disponible
+            pour stage · Avril 2026</span>
+        </div>
+        <h1 class="hero-title">
+          Ayoub <span class="hero-title-accent">Seghir</span>
+        </h1>
+        <p class="hero-subtitle">
+          <span id="typed-text"></span><span class="typed-cursor">|</span>
+        </p>
+        <p class="hero-desc">
+          <span data-fr="Étudiant en 2ème année de BUT Informatique — parcours"
+            data-en="2nd year of BUT Computer Science — track">Étudiant en 2ème année de BUT Informatique —
+            parcours</span>
+          <strong> Data &amp; Analyse de données</strong>.<br />
+          <span
+            data-fr="Ambitieux, autonome, j'aime relever des défis techniques et construire des projets qui ont du sens."
+            data-en="Ambitious, self-driven, I love tackling technical challenges and building projects that actually matter.">Ambitieux,
+            autonome, j'aime relever des défis techniques et construire des projets qui ont du sens.</span>
+        </p>
+        <div class="hero-location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Reims · Marseille
+        </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" data-fr="Voir mes projets" data-en="See my projects">Voir mes
+            projets</a>
+          <a href="CV/CV-Ayoub_SEGHIR.pdf" class="btn btn-secondary" target="_blank" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+              <polyline points="7,10 12,15 17,10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span data-fr="Télécharger CV" data-en="Download CV">Télécharger CV</span>
+          </a>
+          <a href="#contact" class="btn btn-ghost" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/SAHYGO" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ayoub-seghir-675916277/" target="_blank" rel="noopener"
+            class="social-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="mailto:ayoub.seghir@outlook.fr" class="social-link" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22,6-10,7L2,6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span data-fr="Défiler" data-en="Scroll">Défiler</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         À PROPOS — STYLE MAXENCE
+    ════════════════════════════════════════════ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-label" data-fr="À propos" data-en="About">À propos</div>
+        <h2 class="section-title"><span data-fr="Qui suis-je" data-en="Who am I">Qui suis-je</span><span
+            class="gradient-text"> ?</span></h2>
+
+        <!-- Bloc principal : photo + bio -->
+        <div class="about-hero reveal">
+          <div class="about-photo-wrap">
+            <img src="img/photodeprofil.jpg" alt="Ayoub Seghir" class="about-photo" />
+            <div class="about-photo-ring"></div>
+          </div>
+          <div class="about-bio">
+            <div class="about-greeting">👋 <span data-fr="Salut, moi c'est" data-en="Hey, I'm">Salut, moi c'est</span>
+              <strong>Ayoub</strong>
+            </div>
+            <p><span data-fr="2ème année de" data-en="2nd year of">2ème année de</span> <strong>BUT
+                Informatique</strong> <span data-fr="à l'IUT de Reims, option" data-en="at IUT de Reims, track">à l'IUT
+                de Reims, option</span> <strong>DATA — <span data-fr="Analyse de données"
+                  data-en="Data Analysis">Analyse de données</span></strong>.
+              <span
+                data-fr="Depuis le lycée je bricole des outils, j'ai lancé une micro-entreprise de claviers mécaniques, et j'ai développé des bots de trading en Python. Pas vraiment du genre à attendre la fin des cours pour commencer à construire."
+                data-en="Since high school I've been building things — I launched a mechanical keyboard business, and developed trading bots in Python. Not really the type to wait for class to end before starting to build.">Depuis
+                le lycée je bricole des outils, j'ai lancé une micro-entreprise de claviers mécaniques,
+                et j'ai développé des bots de trading en Python. Pas vraiment du genre à attendre la fin des cours pour
+                commencer à construire.</span>
+            </p>
+            <p data-fr="Ce qui me passionne : transformer des données en visuels qui parlent d'eux-mêmes, et créer des interfaces web où chaque détail compte pour l'utilisateur."
+              data-en="What I'm passionate about: turning raw data into clear visuals, and building web interfaces where every detail matters for the user.">
+              Ce qui me passionne : transformer des données en visuels qui parlent d'eux-mêmes, et créer des interfaces
+              web où chaque détail compte pour l'utilisateur.</p>
+            <div class="about-meta">
+              <span class="about-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span data-fr="Reims · Marseille" data-en="Reims · Marseille">Reims · Marseille</span>
+              </span>
+              <span class="about-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                </svg>
+                <span data-fr="Disponible · Avril 2026" data-en="Available · April 2026">Disponible · Avril 2026</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compétences catégorisées -->
+        <div class="about-skills-grid">
+
+          <div class="about-skill-col reveal">
+            <div class="skill-col-header">
+              <span class="skill-col-icon skill-icon-frontend">◆</span>
+              <h3 data-fr="Data &amp; BI" data-en="Data &amp; BI">Data &amp; BI</h3>
+            </div>
+            <div class="stack-tags">
+              <span class="tag tag-data">SQL</span>
+              <span class="tag tag-data">Python</span>
+              <span class="tag tag-data">Pandas</span>
+              <span class="tag tag-data">Power BI</span>
+              <span class="tag tag-data">Tableau</span>
+              <span class="tag tag-data">NumPy</span>
+              <span class="tag tag-data">Matplotlib</span>
+            </div>
+          </div>
+
+          <div class="about-skill-col reveal">
+            <div class="skill-col-header">
+              <span class="skill-col-icon skill-icon-backend">▲</span>
+              <h3 data-fr="Dev Web" data-en="Web Dev">Dev Web</h3>
+            </div>
+            <div class="stack-tags">
+              <span class="tag tag-web">PHP / Symfony</span>
+              <span class="tag tag-web">JavaScript</span>
+              <span class="tag tag-web">HTML5 / CSS3</span>
+              <span class="tag tag-web">TailwindCSS</span>
+              <span class="tag tag-web">API REST</span>
+            </div>
+          </div>
+
+          <div class="about-skill-col reveal">
+            <div class="skill-col-header">
+              <span class="skill-col-icon skill-icon-devops">●</span>
+              <h3 data-fr="DevOps &amp; Outils" data-en="DevOps &amp; Tools">DevOps &amp; Outils</h3>
+            </div>
+            <div class="stack-tags">
+              <span class="tag tag-infra">GCP</span>
+              <span class="tag tag-infra">Docker</span>
+              <span class="tag tag-infra">Git</span>
+              <span class="tag tag-infra">Linux</span>
+              <span class="tag tag-infra">CI/CD</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Centres d'intérêt -->
+        <div class="about-interests">
+          <h3 class="interests-title" data-fr="Centres d'intérêt" data-en="Interests">Centres d'intérêt</h3>
+          <div class="interests-grid">
+            <div class="interest-card reveal">
+              <span class="interest-icon">🤖</span>
+              <div>
+                <strong data-fr="Intelligence Artificielle" data-en="Artificial Intelligence">Intelligence
+                  Artificielle</strong>
+                <p data-fr="Modèles locaux avec Ollama, APIs LLM, automatisation de tâches"
+                  data-en="Local models with Ollama, LLM APIs, task automation">Modèles locaux avec Ollama, APIs LLM,
+                  automatisation de tâches</p>
+              </div>
+            </div>
+            <div class="interest-card reveal">
+              <span class="interest-icon">🖨️</span>
+              <div>
+                <strong data-fr="Impression 3D" data-en="3D Printing">Impression 3D</strong>
+                <p data-fr="Prototypage de pièces sur mesure, modélisation Fusion 360"
+                  data-en="Custom parts prototyping, Fusion 360 modelling">Prototypage de pièces sur mesure,
+                  modélisation Fusion 360</p>
+              </div>
+            </div>
+            <div class="interest-card reveal">
+              <span class="interest-icon">🥊</span>
+              <div>
+                <strong data-fr="Boxe anglaise" data-en="Boxing">Boxe anglaise</strong>
+                <p data-fr="Sport pratiqué depuis plusieurs années, rigueur et dépassement de soi"
+                  data-en="Sport I've been practising for years — discipline and pushing my limits">Sport pratiqué
+                  depuis plusieurs années, rigueur et dépassement de soi</p>
+              </div>
+            </div>
+            <div class="interest-card reveal">
+              <span class="interest-icon">📈</span>
+              <div>
+                <strong data-fr="Finance &amp; Crypto" data-en="Finance &amp; Crypto">Finance &amp; Crypto</strong>
+                <p data-fr="Marchés, cryptos, trading algorithmique — j'y ai consacré un projet entier"
+                  data-en="Markets, crypto, algorithmic trading — I built a whole project around it">Marchés, cryptos,
+                  trading algorithmique — j'y ai consacré un projet entier</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════
+         PROJETS
+    ════════════════════════════════════════════ -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+
+        <!-- Section header -->
+        <div class="projects-header">
+          <div>
+            <div class="section-label" data-fr="Projets" data-en="Projects">Projets</div>
+            <h2 class="section-title"><span data-fr="Mes" data-en="My">Mes</span> <span class="gradient-text"
+                data-fr="réalisations" data-en="projects">réalisations</span></h2>
+          </div>
+          <a href="https://github.com/SAHYGO" target="_blank" rel="noopener" class="projects-github-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            <span data-fr="Voir tous les projets" data-en="See all projects">Voir tous les projets</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- ─── Projets perso ───────────────────────────  -->
+        <div class="pcat-label">
+          <span class="pcat-pill pcat-pill-green" data-fr="🚀 Personnels" data-en="🚀 Personal">🚀 Personnels</span>
+          <span class="pcat-line"></span>
+        </div>
+
+        <div class="pcard-grid">
+
+          <!-- SAHYGO -->
+          <div class="pcard reveal">
+            <div class="pcard-img-wrap">
+              <div class="pcard-img-bg" style="background: linear-gradient(135deg,#0f172a 0%, #1e293b 100%)">
+                <img src="img/Logosahygo-removebg-preview.png" alt="SAHYGO" class="pcard-img-center" />
+              </div>
+              <div class="pcard-date">Depuis 2023</div>
+              <div class="pcard-links">
+                <a href="https://github.com/SAHYGO" target="_blank" rel="noopener" class="pcard-link">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  Repo
+                </a>
+              </div>
+            </div>
+            <div class="pcard-body">
+              <div class="pcard-meta">
+                <span class="pcard-type" data-fr="🚀 Entrepreneuriat" data-en="🚀 Entrepreneurship">🚀
+                  Entrepreneuriat</span>
+              </div>
+              <h3 class="pcard-title">SAHYGO</h3>
+              <p class="pcard-desc"
+                data-fr="Ma micro-entreprise créée pendant mes études : vente de claviers mécaniques personnalisés en ligne, gestion des stocks automatisée en Python et suivi des ventes."
+                data-en="My own business started during my studies: selling custom mechanical keyboards online, automated inventory management in Python, and sales tracking.">
+                Ma micro-entreprise créée pendant mes études : vente de claviers mécaniques
+                personnalisés en ligne, gestion des stocks automatisée en Python et suivi des ventes.</p>
+              <div class="pcard-tags">
+                <span class="ptag">E-commerce</span>
+                <span class="ptag">Python</span>
+                <span class="ptag">Analytics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TradeBot -->
+          <div class="pcard reveal">
+            <div class="pcard-img-wrap">
+              <div class="pcard-img-bg" style="background: linear-gradient(135deg,#064e3b 0%,#065f46 60%,#047857 100%)">
+                <div class="pcard-chart">
+                  <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="0,50 20,35 40,40 60,20 80,28 100,10 120,18" stroke="#34d399" stroke-width="2.5"
+                      fill="none" opacity="0.9" />
+                    <polyline points="0,55 20,48 40,50 60,38 80,42 100,30 120,35" stroke="#6ee7b7" stroke-width="1.5"
+                      fill="none" opacity="0.5" />
+                  </svg>
+                </div>
+              </div>
+              <div class="pcard-date">2024 – 2025</div>
+              <div class="pcard-links">
+                <a href="https://github.com/SAHYGO/TRADING" target="_blank" rel="noopener" class="pcard-link">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  Repo
+                </a>
+              </div>
+            </div>
+            <div class="pcard-body">
+              <div class="pcard-meta">
+                <span class="pcard-type" data-fr="🤖 Bot financier" data-en="🤖 Financial bot">🤖 Bot financier</span>
+              </div>
+              <h3 class="pcard-title">TRADING — TradeBot</h3>
+              <p class="pcard-desc"
+                data-fr="Plusieurs bots de trading codés avec des approches différentes — analyse de marché (crypto, forex), détection de signaux d'achat/vente, alertes automatiques. Versions itérées jusqu'à un moteur avec IA intégrée."
+                data-en="Multiple trading bots built with different approaches — market analysis (crypto, forex), buy/sell signal detection, automatic alerts. Iterated versions up to an AI-powered engine.">
+                Plusieurs bots de trading codés avec des approches différentes — analyse de marché
+                (crypto, forex), détection de signaux d'achat/vente, alertes automatiques. Versions itérées jusqu'à un
+                moteur avec IA intégrée.</p>
+              <div class="pcard-tags">
+                <span class="ptag">Python</span>
+                <span class="ptag">MQL5</span>
+                <span class="ptag">APIs REST</span>
+                <span class="ptag">Finance</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ─── Projets académiques ──────────────────  -->
+        <div class="pcat-label" style="margin-top:56px">
+          <span class="pcat-pill pcat-pill-blue" data-fr="🎓 Académiques (SAÉ)" data-en="🎓 Academic (SAÉ)">🎓
+            Académiques (SAÉ)</span>
+          <span class="pcat-line"></span>
+        </div>
+
+        <div class="pcard-grid pcard-grid-academic">
+
+          <!-- SAE 3.01 Symfony -->
+          <div class="pcard pcard-sm reveal">
+            <div class="pcard-img-wrap">
+              <div class="pcard-img-bg" style="background:linear-gradient(135deg,#1e1b4b 0%,#312e81 100%)">
+                <div class="pcard-icon-center">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)"
+                    stroke-width="1.5">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="pcard-date">SAÉ 3.01</div>
+              <div class="pcard-links">
+                <a href="https://github.com/SAHYGO/sae3-01" target="_blank" rel="noopener" class="pcard-link">Repo</a>
+              </div>
+            </div>
+            <div class="pcard-body">
+              <h3 class="pcard-title">Buddy System</h3>
+              <p class="pcard-desc"
+                data-fr="App web qui aide les étudiants étrangers à s'intégrer à l'université. On peut trouver un binôme, participer à des événements, envoyer des messages. Développée en équipe de 5."
+                data-en="Web app helping international students settle into university life. Find a buddy, join events, send messages. Built in a team of 5.">
+                App web qui aide les étudiants étrangers à s’intégrer à l’université. On peut
+                trouver un binôme, participer à des événements, envoyer des messages. Développée en équipe de 5.</p>
+              <div class="pcard-tags">
+                <span class="ptag">PHP</span><span class="ptag">Symfony</span><span class="ptag">MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAE 2.01 Steam Games -->
+          <div class="pcard pcard-sm reveal">
+            <div class="pcard-img-wrap">
+              <div class="pcard-img-bg" style="background:linear-gradient(135deg,#1b2838 0%,#2a475e 100%)">
+                <div class="pcard-icon-center">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)"
+                    stroke-width="1.5">
+                    <rect x="2" y="6" width="20" height="12" rx="2" />
+                    <path d="M6 12h.01M10 10v4M8 12h4" />
+                    <circle cx="17" cy="12" r="1" />
+                  </svg>
+                </div>
+              </div>
+              <div class="pcard-date">SAÉ 2.01</div>
+              <div class="pcard-links">
+                <a href="https://github.com/SAHYGO/sae2-01" target="_blank" rel="noopener" class="pcard-link">Repo</a>
+              </div>
+            </div>
+            <div class="pcard-body">
+              <h3 class="pcard-title">Steam Game Browser</h3>
+              <p class="pcard-desc"
+                data-fr="App web style Steam pour explorer des jeux par genre et catégorie. Fiche complète par jeu (prix, note Metacritic, OS), tri, CRUD et design dark inspiré de la vraie interface Steam."
+                data-en="Steam-style web app to browse games by genre and category. Full game page (price, Metacritic score, OS), sorting, CRUD and a dark design inspired by the real Steam UI.">
+                App web style Steam pour explorer des jeux par genre et catégorie. Fiche complète
+                par jeu (prix, note Metacritic, OS), tri, CRUD et design dark inspiré de la vraie interface Steam.</p>
+              <div class="pcard-tags">
+                <span class="ptag">PHP</span><span class="ptag">SQL</span><span class="ptag">CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAE Labyrinthes -->
+          <div class="pcard pcard-sm reveal">
+            <div class="pcard-img-wrap">
+              <div class="pcard-img-bg" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%)">
+                <div class="pcard-icon-center">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)"
+                    stroke-width="1.5">
+                    <path
+                      d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" />
+                  </svg>
+                </div>
+              </div>
+              <div class="pcard-date">SAÉ Algo</div>
+              <div class="pcard-links">
+                <a href="https://github.com/SAHYGO/sae_labyrinthes" target="_blank" rel="noopener"
+                  class="pcard-link">Repo</a>
+              </div>
+            </div>
+            <div class="pcard-body">
+              <h3 class="pcard-title">Labyrinths — Algo &amp; IA</h3>
+              <p class="pcard-desc"
+                data-fr="Projet algorithmique : trouver le chemin dans un labyrinthe avec trois méthodes différentes. Visualisation colorée pour voir comment chaque algorithme explore et compare leurs performances."
+                data-en="Algorithm project: finding the path through a maze using three different methods. Colour visualisation to show how each algorithm explores and compare their performance.">
+                Projet algorithmique : trouver le chemin dans un labyrinthe avec trois méthodes
+                différentes. Visualisation colorée pour voir comment chaque algorithme explore et compare leurs
+                performances.</p>
+              <div class="pcard-tags">
+                <span class="ptag">Python</span><span class="ptag">Jupyter</span><span class="ptag">A*</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAE Peg Solitaire -->
+          <div class="pcard pcard-sm reveal">
+            <div class="pcard-img-wrap">
+              <div class="pcard-img-bg" style="background:linear-gradient(135deg,#2d1135 0%,#7c3aed 100%)">
+                <div class="pcard-icon-center">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)"
+                    stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3" />
+                    <circle cx="4" cy="12" r="2" />
+                    <circle cx="20" cy="12" r="2" />
+                    <circle cx="12" cy="4" r="2" />
+                    <circle cx="12" cy="20" r="2" />
+                  </svg>
+                </div>
+              </div>
+              <div class="pcard-date">SAÉ 1</div>
+              <div class="pcard-links">
+                <a href="https://github.com/SAHYGO/sae1_pegsolitaire" target="_blank" rel="noopener"
+                  class="pcard-link">Repo</a>
+              </div>
+            </div>
+            <div class="pcard-body">
+              <h3 class="pcard-title">Peg Solitaire</h3>
+              <p class="pcard-desc"
+                data-fr="Jeu de plateau classique codé en Python : on déplace des pions sur un plateau selon des règles précises. Interface graphique complète, gestion des coups valides et des états de jeu."
+                data-en="Classic board game coded in Python: move pegs on a board following precise rules. Full graphical interface, valid move checking and game state management.">
+                Jeu de plateau classique codé en Python : on déplace des pions sur un plateau selon
+                des règles précises. Interface graphique complète, gestion des coups valides et des états de jeu.</p>
+              <div class="pcard-tags">
+                <span class="ptag">Python</span><span class="ptag">Pygame</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <section id="parcours" class="section">
+      <div class="container">
+        <div class="section-label" data-fr="Parcours" data-en="Journey">Parcours</div>
+        <h2 class="section-title"><span data-fr="Expérience" data-en="Experience">Expérience</span> &amp; <span
+            data-fr="Éducation" data-en="Education">Éducation</span></h2>
+      </div>
+
+      <!-- Timeline horizontale scrollable -->
+      <div class="htl-wrapper">
+        <div class="htl-track">
+          <!-- Ligne horizontale -->
+          <div class="htl-line"></div>
+
+          <!-- Items -->
+          <div class="htl-items">
+
+            <!-- SAHYGO -->
+            <div class="htl-item reveal">
+              <div class="htl-dot htl-dot-accent"></div>
+              <div class="htl-date" data-fr="Depuis 2023" data-en="Since 2023">Depuis 2023</div>
+              <h4 class="htl-title" data-fr="Fondateur &amp; Développeur" data-en="Founder &amp; Developer">Fondateur
+                &amp; Développeur</h4>
+              <p class="htl-sub">SAHYGO — <span data-fr="E-commerce, Reims" data-en="E-commerce, Reims">E-commerce,
+                  Reims</span></p>
+              <p class="htl-type" data-fr="Auto-entrepreneur" data-en="Self-employed">Auto-entrepreneur</p>
+            </div>
+
+            <!-- TradeBot -->
+            <div class="htl-item reveal">
+              <div class="htl-dot htl-dot-accent"></div>
+              <div class="htl-date">2024 – 2025</div>
+              <h4 class="htl-title" data-fr="Développeur Python" data-en="Python Developer">Développeur Python</h4>
+              <p class="htl-sub" data-fr="TradeBot — Projet personnel" data-en="TradeBot — Personal project">TradeBot —
+                Projet personnel</p>
+              <p class="htl-type" data-fr="Automatisation &amp; Finance" data-en="Automation &amp; Finance">
+                Automatisation &amp; Finance</p>
+            </div>
+
+            <!-- BUT Info -->
+            <div class="htl-item reveal">
+              <div class="htl-dot"></div>
+              <div class="htl-date">2023 – 2026</div>
+              <h4 class="htl-title">BUT Informatique</h4>
+              <p class="htl-sub">IUT de Reims-Châlons-Charleville — URCA, Reims (51)</p>
+              <p class="htl-type" data-fr="Parcours Data &amp; Analyse de données"
+                data-en="Data &amp; Data Analysis track">Parcours Data &amp; Analyse de données</p>
+            </div>
+
+            <!-- Bac -->
+            <div class="htl-item reveal">
+              <div class="htl-dot"></div>
+              <div class="htl-date">2019 – 2023</div>
+              <h4 class="htl-title">Baccalauréat Général</h4>
+              <p class="htl-sub">Lycée privé Sacré-Cœur, Reims (51)</p>
+              <p class="htl-type" data-fr="Maths &amp; SES — Mention Bien" data-en="Maths &amp; Economics — Merit">Maths
+                &amp; SES — Mention Bien</p>
+            </div>
+
+            <!-- Stage recherché -->
+            <div class="htl-item htl-item-future reveal">
+              <div class="htl-dot htl-dot-future"></div>
+              <div class="htl-date">2026 – 2029</div>
+              <h4 class="htl-title" data-fr="Alternance recherchée 🎯" data-en="Looking for Apprenticeship 🎯">
+                Alternance recherchée 🎯</h4>
+              <p class="htl-sub" data-fr="Data, Développement · Reims / Marseille"
+                data-en="Data, Development · Reims / Marseille">Data, Développement · Reims / Marseille</p>
+              <p class="htl-type htl-available" data-fr="Disponible" data-en="Available">Disponible</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT
+    ════════════════════════════════════════════ -->
+    <section id="contact" class="section">
+      <div class="container">
+
+        <div class="contact-hero">
+          <!-- Gauche : texte + disponibilité -->
+          <div class="contact-left">
+            <div class="section-label" data-fr="Contact" data-en="Contact">Contact</div>
+            <h2 class="section-title"><span data-fr="Vous avez un projet" data-en="Got a project">Vous avez un
+                projet</span><br /><span class="gradient-text" data-fr="en tête ?" data-en="in mind?">en tête ?</span>
+            </h2>
+            <p class="contact-intro"><span data-fr="Un projet en tête, un site à réaliser ou un contrat d'alternance ?"
+                data-en="A project in mind, a website to build, or an apprenticeship contract?">Un projet en tête, un
+                site à réaliser ou un contrat d'alternance ?</span><br /><span data-fr="N'hésitez pas à me contacter."
+                data-en="Feel free to reach out.">N'hésitez pas à me contacter.</span></p>
+
+            <!-- Badges de disponibilité -->
+            <div class="contact-badges">
+              <div class="contact-badge contact-badge-stage">
+                <span class="badge-dot-lg"></span>
+                <div>
+                  <div class="badge-main" data-fr="Stage · Avril 2026" data-en="Internship · April 2026">Stage · Avril
+                    2026</div>
+                  <div class="badge-sub" data-fr="8 à 12 semaines · Data, BI, Dev Web"
+                    data-en="8 to 12 weeks · Data, BI, Web Dev">8 à 12 semaines · Data, BI, Dev Web</div>
+                </div>
+              </div>
+              <div class="contact-badge contact-badge-alt">
+                <span class="badge-dot-lg badge-dot-blue"></span>
+                <div>
+                  <div class="badge-main" data-fr="Alternance · 2026 – 2030" data-en="Apprenticeship · 2026 – 2030">
+                    Alternance · 2026 – 2030</div>
+                  <div class="badge-sub" data-fr="4 ans · En vue d'une école d'ingénieurs"
+                    data-en="4 years · Towards an engineering school">4 ans · En vue d’une école d’ingénieurs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Droite : liens de contact -->
+          <div class="contact-right">
+            <a href="mailto:ayoub.seghir@outlook.fr" class="contact-link-card reveal">
+              <div class="clc-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22,6-10,7L2,6" />
+                </svg>
+              </div>
+              <div class="clc-body">
+                <div class="clc-label">Email</div>
+                <div class="clc-value">ayoub.seghir@outlook.fr</div>
+              </div>
+              <svg class="clc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ayoub-seghir-675916277/" target="_blank" rel="noopener"
+              class="contact-link-card reveal">
+              <div class="clc-icon clc-icon-blue">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </div>
+              <div class="clc-body">
+                <div class="clc-label">LinkedIn</div>
+                <div class="clc-value">linkedin.com/in/ayoub-seghir</div>
+              </div>
+              <svg class="clc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+
+            <a href="https://github.com/SAHYGO" target="_blank" rel="noopener" class="contact-link-card reveal">
+              <div class="clc-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </div>
+              <div class="clc-body">
+                <div class="clc-label">GitHub</div>
+                <div class="clc-value">github.com/SAHYGO</div>
+              </div>
+              <svg class="clc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+
+            <a href="CV/CV-Ayoub_SEGHIR.pdf" target="_blank" download class="contact-link-card reveal">
+              <div class="clc-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14,2 14,8 20,8" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                  <polyline points="7,10 12,15 17,10" />
+                </svg>
+              </div>
+              <div class="clc-body">
+                <div class="clc-label">Curriculum Vitae</div>
+                <div class="clc-value">Télécharger mon CV</div>
+              </div>
+              <svg class="clc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-name">Ayoub Seghir</span>
+        <span class="footer-tagline" data-fr="Data × Web · IUT de Reims · 2026"
+          data-en="Data × Web · IUT Reims · 2026">Data × Web · IUT de Reims · 2026</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/SAHYGO" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+        <span class="footer-sep">·</span>
+        <a href="https://www.linkedin.com/in/ayoub-seghir-675916277/" target="_blank" rel="noopener"
+          class="footer-link">LinkedIn</a>
+        <span class="footer-sep">·</span>
+        <a href="mailto:ayoub.seghir@outlook.fr" class="footer-link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
