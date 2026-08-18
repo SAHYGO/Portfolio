@@ -109,18 +109,18 @@
 
   const phrasesByLang = {
     fr: [
-      'Étudiant BUT Informatique',
+      'Élève-ingénieur CESI Reims',
       'Data Analyst / Data Engineer',
       'Développeur Web & Data',
       'Entrepreneur · SAHYGO',
-      'Disponible · Stage Avril 2026',
+      'En alternance · Depuis sept. 2026',
     ],
     en: [
-      'BUT Computer Science Student',
+      'CESI Reims Engineering Student',
       'Data Analyst / Data Engineer',
       'Web & Data Developer',
       'Entrepreneur · SAHYGO',
-      'Available · Internship April 2026',
+      'Apprenticeship · Since Sept. 2026',
     ],
   };
 
